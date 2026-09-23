@@ -1,0 +1,205 @@
+/* ============================================================
+   漢源閱寫音頻 — shared stylesheet
+   Edit this one file and every class page changes.
+   The season programme, not a list of players.
+   One page-level player in a persistent bar; the list stays an index.
+   Families from myhanyuan.hk (Noto Serif TC + Plus Jakarta Sans),
+   its brand red kept as a jewel accent rather than a ground.
+   ============================================================ */
+
+:root{
+  --ivory:#FAF8F4;
+  --ivory-2:#F3EFE8;
+  --ink:#191512;
+  --ink-soft:#4C443D;
+  --muted:#8A8078;
+  --faint:#B8AFA5;
+  --hair:#E4DFD6;
+  --hair-2:#D6CFC3;
+  --red:#B12E2C;
+  --red-deep:#8C2220;
+  --red-wash:#F6EAE8;
+  --bar:#FFFFFF;
+  --bar-ink:#191512;
+  --bar-muted:#8A8078;
+  --bar-hair:#E4DFD6;
+}
+html{color-scheme:light}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ivory);color:var(--ink);
+  font-family:"Plus Jakarta Sans","Noto Sans TC","PingFang HK","Microsoft JhengHei",system-ui,sans-serif;
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  padding-bottom:104px;                 /* room for the player bar */
+}
+:focus-visible{outline:1.5px solid var(--red);outline-offset:4px}
+
+.eyebrow{
+  font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--red);
+}
+
+  max-width:36rem;margin:0 auto;padding:11px 28px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+  font:inherit;font-size:12px;font-weight:500;letter-spacing:.04em;
+  background:none;border:0;padding:0;cursor:pointer;color:var(--muted);
+  border-bottom:1px solid transparent;
+}
+
+/* ---------- page ---------- */
+.wrap{max-width:36rem;margin:0 auto;padding:0 28px}
+
+header.mast{padding:64px 0 40px}
+.mast .crest{
+  height:46px;width:auto;display:block;margin-bottom:28px;
+}
+.mast h1{
+  margin:14px 0 0;
+  font-family:"Noto Serif TC",Georgia,serif;font-weight:500;
+  font-size:clamp(34px,9vw,44px);line-height:1.18;letter-spacing:.01em;
+  text-wrap:balance;
+}
+.mast .sub{
+  margin:16px 0 0;font-size:13px;color:var(--muted);font-weight:400;
+  letter-spacing:.02em;
+}
+.mast .term{
+  margin:26px 0 0;padding-top:16px;border-top:1px solid var(--hair);
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums;
+}
+
+/* ---------- unit ---------- */
+.unit{margin-top:34px}
+.unit:first-of-type{margin-top:4px}
+.unit>summary{
+  list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px;
+  padding-bottom:13px;border-bottom:1px solid var(--hair);
+}
+.unit>summary::-webkit-details-marker{display:none}
+.unit>summary:hover .unit-name{color:var(--red)}
+.unit-name{
+  font-family:"Noto Serif TC",Georgia,serif;font-weight:500;font-size:17px;
+  letter-spacing:.06em;transition:color .15s ease;
+}
+.unit-rule{flex:1 1 auto}
+.unit-count{
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
+  font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.unit .tracks{padding-top:4px}
+
+/* ---------- track (index row, no player) ---------- */
+.track{
+  width:100%;display:flex;align-items:baseline;gap:18px;
+  padding:19px 0;border:0;background:none;text-align:left;cursor:pointer;
+  border-bottom:1px solid var(--hair);font:inherit;color:inherit;
+  transition:opacity .15s ease;
+}
+.unit .tracks .track:last-child{border-bottom:0}
+.track:hover .lecture{color:var(--red)}
+.track .idx{
+  flex:0 0 auto;width:22px;
+  font-size:11.5px;letter-spacing:.1em;color:var(--faint);
+  font-variant-numeric:tabular-nums;font-weight:500;
+}
+.track .body{flex:1 1 auto;min-width:0}
+.track .lecture{
+  font-family:"Noto Serif TC",Georgia,serif;font-weight:500;font-size:16.5px;
+  letter-spacing:.03em;transition:color .15s ease;
+}
+.track .passage{
+  display:block;margin-top:3px;font-size:13.5px;color:var(--muted);letter-spacing:.01em;
+}
+.track .passage.todo{color:var(--faint);font-style:italic}
+.track .mark{
+  flex:0 0 auto;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;color:var(--red);
+}
+.track .bars{
+  flex:0 0 auto;display:none;align-items:flex-end;gap:2px;height:13px;
+}
+.track.is-on .idx{color:var(--red)}
+.track.is-on .lecture{color:var(--red)}
+.track.is-on .mark{display:none}
+.track.is-on .bars{display:flex}
+.bars i{width:2px;background:var(--red);animation:eq .9s ease-in-out infinite}
+.bars i:nth-child(1){height:5px;animation-delay:-.2s}
+.bars i:nth-child(2){height:11px;animation-delay:-.5s}
+.bars i:nth-child(3){height:7px}
+@keyframes eq{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+
+/* ---------- empty / error ---------- */
+.msg{
+  margin-top:24px;padding:44px 0;border-top:1px solid var(--hair);
+  text-align:center;
+}
+.msg strong{
+  display:block;font-family:"Noto Serif TC",serif;font-weight:500;font-size:19px;
+  letter-spacing:.03em;margin-bottom:8px;
+}
+.msg span{font-size:13.5px;color:var(--muted)}
+
+footer{
+  margin-top:56px;padding:24px 0 32px;border-top:1px solid var(--hair);
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);font-weight:500;line-height:2.2;
+}
+
+/* ---------- the player bar ---------- */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:20;
+  background:var(--bar);color:var(--bar-ink);
+  border-top:1px solid var(--hair);
+  box-shadow:0 -18px 40px -32px rgba(25,21,18,.55);
+  transform:translateY(101%);transition:transform .32s cubic-bezier(.22,.61,.36,1);
+}
+.dock.up{transform:none}
+.dock-rail{height:2px;background:var(--bar-hair);cursor:pointer;position:relative}
+.dock-fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--red)}
+.dock-in{
+  max-width:36rem;margin:0 auto;padding:14px 28px 18px;
+  display:flex;align-items:center;gap:16px;
+}
+.dock-play{
+  flex:0 0 auto;width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;cursor:pointer;padding:0;
+  background:none;border:1px solid var(--red);color:var(--red);
+  transition:background .15s ease,color .15s ease;
+}
+.dock-play:hover{background:var(--red);color:#fff}
+.dock-play svg{display:block;width:13px;height:13px;fill:currentColor}
+.dock-txt{flex:1 1 auto;min-width:0}
+.dock-title{
+  font-family:"Noto Serif TC",Georgia,serif;font-size:15px;font-weight:500;letter-spacing:.03em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.dock-meta{
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bar-muted);
+  font-variant-numeric:tabular-nums;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.dock-speed{
+  flex:0 0 auto;font:inherit;font-size:11.5px;font-weight:600;letter-spacing:.06em;
+  font-variant-numeric:tabular-nums;background:none;border:1px solid var(--hair-2);
+  color:var(--bar-ink);padding:5px 10px;cursor:pointer;transition:border-color .15s ease,color .15s ease;
+}
+.dock-speed:hover{border-color:var(--red);color:var(--red)}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .dock{transform:none}
+}
+@media (max-width:420px){
+  .wrap,.dock-in{padding-left:20px;padding-right:20px}
+  header.mast{padding:44px 0 32px}
+  .track{gap:14px}
+}
+
+/* root landing page only */
+body.landing{padding-bottom:0}
+body.landing .msg{margin-top:8px}
