@@ -2,7 +2,9 @@
   "grade": "K1",
   "year": "2026",
   "label": "2026-2027",
-  "heading": "漢源K1閱寫音頻",
+  "heading": "漢源K1兒歌音頻",
+  "kind": "兒歌音頻",
+  "kindEn": "Nursery Rhyme Audio",
   "entries": [
     {
       "unit": "階段一",

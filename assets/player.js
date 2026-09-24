@@ -94,7 +94,10 @@
     });
 
   function render(d) {
-    document.title = '漢源' + d.grade + '閱寫音頻 · ' + d.label;
+    // Most classes are 閱寫音頻; K1 is 兒歌音頻. The data file says so when it differs.
+    var kind = d.kind || '閱寫音頻';
+    var kindEn = d.kindEn || 'Reading & Writing Audio';
+    document.title = '漢源' + d.grade + kind + ' · ' + d.label;
 
     var mast = document.getElementById('hy-mast');
     var img = el('img', 'crest'); img.src = LOGO; img.alt = '漢源教育中心';
@@ -103,8 +106,8 @@
     });
     mast.appendChild(img);
     mast.appendChild(el('p', 'eyebrow', '漢源教育中心 · Han Yuan'));
-    mast.appendChild(el('h1', null, d.grade + ' 閱寫音頻'));
-    mast.appendChild(el('p', 'sub', 'Reading & Writing Audio'));
+    mast.appendChild(el('h1', null, d.grade + ' ' + kind));
+    mast.appendChild(el('p', 'sub', kindEn));
     var term = el('p', 'term');
     term.appendChild(el('span', null, d.label));
     term.appendChild(el('span', null, d.entries.length ? d.entries.length + ' 篇' : '即將開始'));
