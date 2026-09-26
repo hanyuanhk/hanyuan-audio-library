@@ -96,7 +96,8 @@
   function render(d) {
     // Most classes are 閱寫音頻; K1 is 兒歌音頻. The data file says so when it differs.
     var kind = d.kind || '閱寫音頻';
-    var kindEn = d.kindEn || 'Reading & Writing Audio';
+    // an explicit empty string means the class shows no English line at all
+    var kindEn = (d.kindEn === undefined) ? 'Reading & Writing Audio' : d.kindEn;
     document.title = '漢源' + d.grade + kind + ' · ' + d.label;
 
     var mast = document.getElementById('hy-mast');
@@ -107,7 +108,7 @@
     mast.appendChild(img);
     mast.appendChild(el('p', 'eyebrow', '漢源教育中心 · Han Yuan'));
     mast.appendChild(el('h1', null, d.grade + ' ' + kind));
-    mast.appendChild(el('p', 'sub', kindEn));
+    if (kindEn) mast.appendChild(el('p', 'sub', kindEn));
     var term = el('p', 'term');
     term.appendChild(el('span', null, d.label));
     term.appendChild(el('span', null, d.entries.length ? d.entries.length + ' 篇' : '即將開始'));

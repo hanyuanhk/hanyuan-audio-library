@@ -2,6 +2,15 @@
   "grade": "K3",
   "year": "2026",
   "label": "2026-2027",
-  "heading": "漢源K3閱寫音頻",
-  "entries": []
+  "heading": "漢源K3課文音頻",
+  "kind": "課文音頻",
+  "kindEn": "",
+  "entries": [
+    {
+      "unit": "階段三",
+      "lecture": "部首識字第二單元",
+      "title": "農場真熱鬧",
+      "url": "https://res.cloudinary.com/dqydozdk8/video/upload/v1790389051/K3-%E9%9A%8E%E6%AE%B5%E4%B8%89_%E9%83%A8%E9%A6%96%E8%AD%98%E5%AD%97%E7%AC%AC%E4%BA%8C%E5%96%AE%E5%85%83_tfzik2.mp3"
+    }
+  ]
 }
