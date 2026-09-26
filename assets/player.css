@@ -41,14 +41,6 @@ body{
   color:var(--red);
 }
 
-  max-width:36rem;margin:0 auto;padding:11px 28px;
-  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
-}
-  font:inherit;font-size:12px;font-weight:500;letter-spacing:.04em;
-  background:none;border:0;padding:0;cursor:pointer;color:var(--muted);
-  border-bottom:1px solid transparent;
-}
-
 /* ---------- page ---------- */
 .wrap{max-width:36rem;margin:0 auto;padding:0 28px}
 
@@ -192,13 +184,11 @@ footer{
 
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
-  .dock{transform:none}
-}
+  .dock{transform:none}}
 @media (max-width:420px){
-  .wrap,.dock-in{padding-left:20px;padding-right:20px}
+  .wrap, .dock-in{padding-left:20px;padding-right:20px}
   header.mast{padding:44px 0 32px}
-  .track{gap:14px}
-}
+  .track{gap:14px}}
 
 /* root landing page only */
 body.landing{padding-bottom:0}
