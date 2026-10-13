@@ -2,7 +2,9 @@
   "grade": "K2",
   "year": "2025",
   "label": "2025-2026",
-  "heading": "漢源K2閱寫音頻",
+  "heading": "漢源K2兒歌音頻",
+  "kind": "兒歌音頻",
+  "kindEn": "Nursery Rhyme Audio",
   "entries": [
     {
       "unit": "階段二",
