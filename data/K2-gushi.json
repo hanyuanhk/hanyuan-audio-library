@@ -1,0 +1,34 @@
+{
+  "grade": "K2",
+  "year": "2026",
+  "label": "2026-2027",
+  "heading": "漢源K2古詩欣賞",
+  "kind": "古詩欣賞",
+  "kindEn": "",
+  "entries": [
+    {
+      "unit": "階段二",
+      "lecture": "第一首",
+      "title": "神童詩",
+      "url": "https://res.cloudinary.com/dqydozdk8/video/upload/v1795756801/K2-%E5%8F%A4%E8%A9%A9%E6%AC%A3%E8%B3%9E1_%E7%A5%9E%E7%AB%A5%E8%A9%A9_uxv5ko.mp3"
+    },
+    {
+      "unit": "階段二",
+      "lecture": "第二首",
+      "title": "池上",
+      "url": "https://res.cloudinary.com/dqydozdk8/video/upload/v1795756799/K2-%E5%8F%A4%E8%A9%A9%E6%AC%A3%E8%B3%9E2_%E6%B1%A0%E4%B8%8A_njmg58.mp3"
+    },
+    {
+      "unit": "階段二",
+      "lecture": "第三首",
+      "title": "山行",
+      "url": "https://res.cloudinary.com/dqydozdk8/video/upload/v1795756799/K2-%E5%8F%A4%E8%A9%A9%E6%AC%A3%E8%B3%9E3_%E5%B1%B1%E8%A1%8C_cluahm.mp3"
+    },
+    {
+      "unit": "階段二",
+      "lecture": "第四首",
+      "title": "江上漁者",
+      "url": "https://res.cloudinary.com/dqydozdk8/video/upload/v1795756799/K2-%E5%8F%A4%E8%A9%A9%E6%AC%A3%E8%B3%9E4_%E6%B1%9F%E4%B8%8A%E6%BC%81%E8%80%85_rvogr8.mp3"
+    }
+  ]
+}
